@@ -2,34 +2,6 @@
 
 import { podcasts, genres, seasons } from "./data.js";
 
-// Example podcast data (replace with API fetch if needed)
-const podcasts = [
-  {
-    id: 1,
-    title: "Tech Talks Daily",
-    description: "Daily insights into the world of technology.",
-    image: "https://via.placeholder.com/300x150?text=Tech+Talks",
-    genres: ["Technology", "Innovation"],
-    updated: "Updated June 2026",
-    seasons: [
-      { number: 1, episodes: 10 },
-      { number: 2, episodes: 12 },
-    ],
-  },
-  {
-    id: 2,
-    title: "History Uncovered",
-    description: "Exploring untold stories from history.",
-    image: "https://via.placeholder.com/300x150?text=History",
-    genres: ["History", "Education"],
-    updated: "Updated May 2026",
-    seasons: [
-      { number: 1, episodes: 8 },
-      { number: 2, episodes: 9 },
-    ],
-  },
-];
-
 // DOM elements
 const podcastGrid = document.getElementById("podcastGrid");
 const modal = document.getElementById("modal");
@@ -66,23 +38,29 @@ function openModal(podcast) {
 
   // Genres
   modalGenres.innerHTML = "";
-  podcast.genres.forEach((genre) => {
-    const tag = document.createElement("span");
-    tag.className = "tag";
-    tag.textContent = genre;
-    modalGenres.appendChild(tag);
+  podcast.genres.forEach((genreId) => {
+    const genre = genres.find((g) => g.id === genreId);
+    if (genre) {
+      const tag = document.createElement("span");
+      tag.className = "tag";
+      tag.textContent = genre.title;
+      modalGenres.appendChild(tag);
+    }
   });
 
   // Updated text
-  modalUpdated.textContent = podcast.updated;
+  modalUpdated.textContent = new Date(podcast.updated).toDateString();
 
   // Seasons
   seasonList.innerHTML = "";
-  podcast.seasons.forEach((season) => {
-    const li = document.createElement("li");
-    li.textContent = `Season ${season.number} - ${season.episodes} episodes`;
-    seasonList.appendChild(li);
-  });
+  const seasonData = seasons.find((s) => s.id === podcast.id);
+  if (seasonData) {
+    seasonData.seasonDetails.forEach((season) => {
+      const li = document.createElement("li");
+      li.textContent = `${season.title} - ${season.episodes} episodes`;
+      seasonList.appendChild(li);
+    });
+  }
 
   modal.classList.remove("hidden");
 }

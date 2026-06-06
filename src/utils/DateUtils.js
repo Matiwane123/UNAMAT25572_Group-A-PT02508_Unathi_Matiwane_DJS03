@@ -18,3 +18,7 @@ export const DateUtils = {
     })}`;
   },
 };
+
+export function formatDate(isoString) {
+  return new Date(isoString).toDateString();
+}

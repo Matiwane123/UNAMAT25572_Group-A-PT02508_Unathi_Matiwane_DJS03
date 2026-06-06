@@ -18,3 +18,12 @@ export const DateUtils = {
     })}`;
   },
 };
+
+import { genres } from "../data.js";
+
+export function getGenreNames(ids) {
+  return ids.map((id) => {
+    const g = genres.find((genre) => genre.id === id);
+    return g ? g.title : "Unknown";
+  });
+}
