@@ -1,5 +1,7 @@
 // src/index.js
 
+import { podcasts, genres, seasons } from "./data.js";
+
 // Example podcast data (replace with API fetch if needed)
 const podcasts = [
   {

@@ -1,4 +1,13 @@
 export const podcasts = [
+  /* ... */
+];
+export const genres = [
+  /* ... */
+];
+export const seasons = [
+  /* ... */
+];
+export const podcasts = [
   {
     id: "10716",
     title: "Something Was Wrong",
