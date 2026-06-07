@@ -8,7 +8,7 @@ This project is a **React-based landing page** for a podcast discovery app. It f
 
 ## Core Objectives
 
-- Fetch podcast data from [Podcast API](https://podcast-api.netlify.app/) on initial page load.
+- Fetch podcast data from [Podcast API](https://agent-6a253a2c1415d00147c34a1--unamat25572-djs03.netlify.app/) on initial page load.
 - Show a **loading indicator** while fetching data.
 - Handle **errors** or **empty results** with clear user messages.
 - Render a responsive **grid layout** of podcast previews using reusable React components.
@@ -37,21 +37,35 @@ This project is a **React-based landing page** for a podcast discovery app. It f
 ## Project Structure
 
 - \*podcast-app/
-  ├── public/
+- ├── public/
+
   │ └── index.html
+
   ├── src/
   │ ├── components/
+
   │ │ ├── PodcastCard.jsx
+
   │ │ ├── Modal.jsx
+
   │ ├── pages/
+
   │ │ └── Home.jsx
+
   │ ├── data.js
+
   │ ├── App.jsx
+
   │ ├── main.jsx
+
   │ └── styles.css
+
   ├── package.json
+
   ├── vite.config.js
+
   └── README.md
+
   ***
 
 ## Responsiveness Requirements
