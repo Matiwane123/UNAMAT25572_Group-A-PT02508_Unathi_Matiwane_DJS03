@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Vite cache
+.vite/
+
+# Editor
+.vscode/
+
+# Netlify (except the generated results file)
+.netlify/
