@@ -5,7 +5,6 @@ html
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PodcastApp</title>
-    <link rel="stylesheet" href="styles.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
       rel="stylesheet"
@@ -13,6 +12,37 @@ html
   </head>
   <body>
     <div id="root"></div>
+
+    <header class="app-header">
+      <h1>🎙️ Podcast App</h1>
+    </header>
+
+    <main class="app-main">
+      <section class="grid" id="podcastGrid"></section>
+    </main>
+
+    <div class="modal hidden" id="modal">
+      <div class="modal-content">
+        <button class="close-btn" id="closeModal" aria-label="Close modal">
+          &times;
+        </button>
+        <div class="banner">
+          <img id="modalImage" class="modal-img" alt="Podcast cover" />
+          <div class="info-section">
+            <div class="title-section">
+              <h2 id="modalTitle"></h2>
+            </div>
+            <p id="modalDesc"></p>
+            <div class="tags" id="modalGenres"></div>
+            <p class="modal-updated-text">
+              Updated: <span id="modalUpdated"></span>
+            </p>
+          </div>
+        </div>
+        <ul class="season-list" id="seasonList"></ul>
+      </div>
+    </div>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
